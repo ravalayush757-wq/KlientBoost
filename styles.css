@@ -25,9 +25,9 @@
     --line-dark: rgba(255, 255, 255, 0.08);
 
     /* Typography */
-    --f-display: sans-serif;
-    --f-body: sans-serif;
-    --f-mono: monospace;
+    --f-display: 'Bebas Neue', sans-serif;
+    --f-body: 'Inter', 'Archivo', sans-serif;
+    --f-mono: 'JetBrains Mono', monospace;
 
     /* Spacing */
     --section-pad: clamp(56px, 8vw, 110px);
@@ -2589,3 +2589,81 @@ h1, h2, h3, h4 {
 .final-cta .lead,
 .site-footer p,
 .site-footer .footer-bottom { color: #AFC3D1 !important; }
+
+/* Moving client portfolio gallery. */
+.testimonials-track-wrapper { display: none; }
+.client-gallery { overflow: hidden; padding: 18px 0 8px; mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.client-gallery-track { display: flex; width: max-content; gap: 18px; animation: client-gallery-scroll 150s linear infinite; }
+.client-gallery:hover .client-gallery-track { animation-play-state: paused; }
+.client-gallery-item { width: clamp(180px, 19vw, 280px); aspect-ratio: 1 / 1.14; flex: 0 0 auto; overflow: hidden; border: 1px solid rgba(137, 201, 235, .22); border-radius: 16px; background: #131c27; }
+.client-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes client-gallery-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .client-gallery-track { animation: none; overflow-x: auto; } }
+
+/* Reference button treatment: raised, squared controls with the existing navy color palette. */
+.nav-cta,
+.btn-primary,
+.package-cta {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #2D3A4C 0%, #242B3A 50%, #171D2A 100%);
+    color: #FFFFFF;
+    border: 2.5px solid #0B1018;
+    border-radius: 9px;
+    box-shadow: 0 4px 0 #0B1018, 0 12px 22px -10px rgba(0, 0, 0, .9);
+    font-family: var(--f-display);
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    transition: transform .08s ease, box-shadow .08s ease, filter .12s ease;
+}
+.nav-cta::before,
+.btn-primary::before,
+.package-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 -100%;
+    width: 70%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+    transform: skewX(-22deg);
+    transition: left .55s ease;
+}
+.nav-cta:hover::before,
+.btn-primary:hover::before,
+.package-cta:hover::before { left: 130%; }
+.nav-cta:hover,
+.btn-primary:hover,
+.package-cta:hover { background: linear-gradient(180deg, #34455A 0%, #242B3A 55%, #171D2A 100%); transform: translateY(-1px); box-shadow: 0 5px 0 #0B1018, 0 14px 25px -10px rgba(0, 0, 0, .95); filter: none; }
+.nav-cta:active,
+.btn-primary:active,
+.package-cta:active { transform: translateY(3px); box-shadow: 0 1px 0 #0B1018, 0 4px 10px -6px rgba(0, 0, 0, .8); }
+
+/* Bebas Neue has its own condensed proportions; avoid synthetic weight and compressed tracking. */
+h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: .02em; }
+.hero h1, .page-hero h1 { letter-spacing: .01em; }
+
+/* Apply the reference display-font metrics consistently throughout the interface. */
+.section-title,
+.trust-title,
+.service-card h3,
+.package-card h3,
+.case-card h3,
+.portfolio-overlay h4,
+.faq-item summary,
+.final-cta h2,
+.footer-brand,
+.nav-cta,
+.btn-primary,
+.btn-ghost,
+.package-cta,
+.filter-tab,
+.case-toggle {
+    font-family: var(--f-display);
+    font-weight: 400;
+    letter-spacing: .02em;
+    line-height: 1.12;
+}
+body, p, a, button, input, textarea, select { font-kerning: normal; text-rendering: optimizeLegibility; }
+
+/* Deep royal blue sampled from the supplied brand reference. */
+.nav-cta, .btn-primary, .package-cta { background: #164A96; }
+.nav-cta:hover, .btn-primary:hover, .package-cta:hover { background: #103C7D; }

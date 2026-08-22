@@ -18,4 +18,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (pricingNav) { const sections = document.querySelectorAll('.pricing-section[id]'); const navLinks = pricingNav.querySelectorAll('a'); const spy = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { navLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id)); } }); }, { rootMargin: '-20% 0px -60% 0px' }); sections.forEach((s) => spy.observe(s)); }
   /* contactUs fallback */
   window.contactUs = window.contactUs || function() { window.location.href = 'mailto:hello@klientboost.com?subject=Growth%20strategy%20enquiry'; };
+  /* Portfolio images are sourced from the project's Portfolio Images folder. */
+  const portfolioImages = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51].map((number) => `Portfolio Images/${number}.png`).concat([
+    'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.57.jpeg', 'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.57 (1).jpeg',
+    'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.58.jpeg', 'Portfolio Images/WhatsApp Image 2026-08-22 at 17.20.29.jpeg'
+  ]);
+  const imageUrl = (path) => encodeURI(path);
+  const grid = document.querySelector('#portfolioGrid');
+  if (grid) {
+    const categories = ['social', 'ugc', 'influencer', 'websites', 'performance'];
+    grid.innerHTML = portfolioImages.map((path, index) => `<article class="portfolio-item reveal visible" data-category="${categories[index % categories.length]}"><img src="${imageUrl(path)}" alt="Klient Boost portfolio project ${index + 1}" loading="lazy" decoding="async"><div class="portfolio-overlay"><h4>Klient Boost</h4><div class="portfolio-meta">Portfolio project ${index + 1}</div></div></article>`).join('');
+  }
+  const clientGallery = document.querySelector('#clientGalleryTrack');
+  if (clientGallery) {
+    clientGallery.innerHTML = [...portfolioImages, ...portfolioImages].map((path, index) => `<figure class="client-gallery-item"><img src="${imageUrl(path)}" alt="Client portfolio work ${index % portfolioImages.length + 1}" loading="lazy" decoding="async"></figure>`).join('');
+  }
+  if (grid) tabs.forEach((tab) => tab.addEventListener('click', () => {
+    const filter = tab.dataset.filter;
+    grid.querySelectorAll('.portfolio-item').forEach((item) => { item.hidden = !(filter === 'all' || item.dataset.category === filter); });
+  }));
 });
