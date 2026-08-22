@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies — Klient Boost</title>
+    <meta name="description" content="Real case studies from Klient Boost. See how we helped Nandan Sweets, EARMACS, Vapour's, Sugar Art Studio, Fiona Beauty Academy and Bundeli Kothi grow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Case Study Page Specific */
+        .cs-hero-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border-radius:var(--radius-lg); overflow:hidden; margin:40px 0 24px; }
+        .cs-hero-stat { background:var(--paper-2); padding:28px 16px; text-align:center; }
+        .cs-hero-stat .num { font-family:var(--f-display); font-size:clamp(28px,3.5vw,42px); color:var(--primary); font-weight:700; line-height:1; }
+        .cs-hero-stat .label { font-size:12px; color:var(--muted); margin-top:6px; letter-spacing:0.03em; }
+
+        .cs-section { padding:clamp(60px,8vw,100px) 0; border-bottom:1px solid var(--line); }
+        .cs-section:last-of-type { border-bottom:none; }
+
+        .cs-header { margin-bottom:40px; }
+        .cs-number { font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary); margin-bottom:8px; }
+        .cs-title { font-size:clamp(32px,4vw,52px); color:#e8f0f8; line-height:1.1; margin-bottom:12px; }
+        .cs-subtitle { color:var(--muted); font-size:15px; max-width:680px; line-height:1.7; }
+
+        .cs-stats-bar { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border-radius:var(--radius-md); overflow:hidden; margin:32px 0; }
+        .cs-stat { background:var(--paper-2); padding:22px 14px; text-align:center; }
+        .cs-stat .val { font-family:var(--f-display); font-size:clamp(22px,2.5vw,32px); color:#e8f0f8; font-weight:700; line-height:1; }
+        .cs-stat .desc { font-size:11px; color:var(--muted); margin-top:6px; }
+
+        .cs-block { margin:36px 0; }
+        .cs-block-title { font-family:var(--f-display); font-size:18px; font-weight:700; color:#e8f0f8; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:14px; padding-bottom:8px; border-bottom:2px solid var(--primary); display:inline-block; }
+        .cs-block p { color:#98aabb; font-size:14px; line-height:1.8; }
+        .cs-block strong { color:#c8d6e5; }
+
+        /* SVG Chart Container */
+        .cs-chart { background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px 24px 24px; margin:28px 0; }
+        .cs-chart-title { font-family:var(--f-display); font-size:14px; color:#e8f0f8; text-align:center; margin-bottom:20px; font-weight:600; letter-spacing:0.03em; }
+
+        /* Before → After visual */
+        .cs-transform { display:grid; grid-template-columns:1fr auto 1fr auto 1fr; gap:0; align-items:stretch; margin:32px 0; background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
+        .cs-transform-col { padding:28px 20px; }
+        .cs-transform-col h4 { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; }
+        .cs-transform-col.before h4 { color:#ff6b6b; }
+        .cs-transform-col.process h4 { color:var(--primary); }
+        .cs-transform-col.after h4 { color:#51cf66; }
+        .cs-transform-col ul { list-style:none; }
+        .cs-transform-col li { font-size:13px; color:#8899aa; padding:5px 0; }
+        .cs-transform-arrow { display:flex; align-items:center; justify-content:center; font-size:24px; color:var(--primary); padding:0 8px; background:rgba(89,184,235,0.03); }
+
+        /* Outcome grid */
+        .cs-outcome { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border-radius:var(--radius-md); overflow:hidden; margin:28px 0; }
+        .cs-outcome-item { background:var(--paper-2); padding:24px 16px; text-align:center; }
+        .cs-outcome-item .icon { font-size:28px; color:var(--primary); margin-bottom:6px; }
+        .cs-outcome-item .val { font-family:var(--f-display); font-size:24px; color:#e8f0f8; font-weight:700; }
+        .cs-outcome-item .label { font-size:11px; color:var(--muted); margin-top:4px; }
+
+        /* Expansion note */
+        .cs-note { background:rgba(89,184,235,0.05); border-left:3px solid var(--primary); padding:16px 20px; border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin:24px 0; }
+        .cs-note-label { font-family:var(--f-mono); font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--primary); margin-bottom:6px; }
+        .cs-note p { font-size:13px; color:#8899aa; line-height:1.7; margin:0; }
+
+        /* Impact Table */
+        .cs-table { width:100%; border-collapse:separate; border-spacing:0; border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; margin:28px 0; }
+        .cs-table th { background:var(--primary-dark); color:#fff; font-family:var(--f-mono); font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:14px 16px; text-align:left; }
+        .cs-table td { padding:14px 16px; font-size:13px; color:#8899aa; border-top:1px solid var(--line); background:var(--paper-2); }
+        .cs-table tr:hover td { background:rgba(89,184,235,0.04); }
+
+        /* Customer journey */
+        .cs-journey { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:16px 0; }
+        .cs-journey-step { background:var(--paper-2); border:1px solid var(--line); padding:8px 16px; border-radius:var(--radius-full); font-size:12px; color:#e8f0f8; font-weight:600; }
+        .cs-journey-arrow { color:var(--primary); font-weight:700; }
+
+        @media (max-width:768px) {
+            .cs-hero-stats, .cs-stats-bar, .cs-outcome { grid-template-columns:repeat(2,1fr); }
+            .cs-transform { grid-template-columns:1fr; }
+            .cs-transform-arrow { padding:8px 0; transform:rotate(90deg); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== NAVIGATION ============== -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand" aria-label="Klient Boost home"><img src="klientboost-logo.png" alt="Klient Boost" width="320" height="72"></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="case-studies.html" class="active">Case Studies</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="nav-cta" onclick="contactUs()">Let's Talk Growth</button>
+                <button class="mobile-toggle" id="mobileToggle">☰</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="page-hero">
+    <div class="hero-bg">
+        <div class="layer-grid"></div>
+        <div class="layer-glow right"></div>
+        <div class="scanline"></div>
+        <div class="hud tl"></div><div class="hud tr"></div><div class="hud bl"></div><div class="hud br"></div>
+    </div>
+    <div class="hero-particles"><div class="particle"></div><div class="particle"></div><div class="particle"></div><div class="particle"></div></div>
+    <div class="container">
+        <div class="eyebrow" style="color:var(--primary);">Featured Case Studies</div>
+        <h1>Real Problems. Real <span class="hi">Results.</span></h1>
+        <p class="lead" style="color:rgba(200,214,229,0.7);text-align:center;margin:0 auto;max-width:680px;">
+            Business growth, performance marketing, brand building & digital transformation — demonstrated through measurable outcomes.
+        </p>
+        <div class="cs-hero-stats">
+            <div class="cs-hero-stat"><div class="num">5</div><div class="label">Featured Clients</div></div>
+            <div class="cs-hero-stat"><div class="num">130%</div><div class="label">Sales Growth</div></div>
+            <div class="cs-hero-stat"><div class="num">623K+</div><div class="label">Vapour's Views</div></div>
+            <div class="cs-hero-stat"><div class="num">831K+</div><div class="label">Fiona Views</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 1. NANDAN SWEETS & SNACKS ======== -->
+<section class="cs-section" id="nandan">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">02 / Sales & Growth Marketing</div>
+            <h2 class="cs-title">Nandan Sweets & Snacks</h2>
+            <p class="cs-subtitle">A restaurant growth story built around campaigns, collaborations, seasonal marketing and sustained local visibility.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">₹50K</div><div class="desc">Average daily sales at start</div></div>
+            <div class="cs-stat"><div class="val">₹75K</div><div class="desc">Average daily sales after 4 months</div></div>
+            <div class="cs-stat"><div class="val">₹1.15L</div><div class="desc">Average daily sales after 1 year</div></div>
+            <div class="cs-stat"><div class="val">+130%</div><div class="desc">Increase vs. starting point</div></div>
+        </div>
+
+        <!-- SVG Growth Chart -->
+        <div class="cs-chart reveal">
+            <div class="cs-chart-title">Average Daily Sales Growth</div>
+            <svg viewBox="0 0 600 280" style="width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid lines -->
+                <line x1="80" y1="30" x2="80" y2="230" stroke="rgba(89,184,235,0.1)" stroke-width="1"/>
+                <line x1="80" y1="230" x2="560" y2="230" stroke="rgba(89,184,235,0.15)" stroke-width="1"/>
+                <line x1="80" y1="180" x2="560" y2="180" stroke="rgba(89,184,235,0.06)" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="80" y1="130" x2="560" y2="130" stroke="rgba(89,184,235,0.06)" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="80" y1="80" x2="560" y2="80" stroke="rgba(89,184,235,0.06)" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="80" y1="30" x2="560" y2="30" stroke="rgba(89,184,235,0.06)" stroke-width="1" stroke-dasharray="4"/>
+                <!-- Y-axis labels -->
+                <text x="72" y="234" fill="#7a8fa2" font-size="10" text-anchor="end" font-family="monospace">₹50K</text>
+                <text x="72" y="184" fill="#7a8fa2" font-size="10" text-anchor="end" font-family="monospace">₹70K</text>
+                <text x="72" y="134" fill="#7a8fa2" font-size="10" text-anchor="end" font-family="monospace">₹90K</text>
+                <text x="72" y="84" fill="#7a8fa2" font-size="10" text-anchor="end" font-family="monospace">₹110K</text>
+                <!-- Area fill -->
+                <path d="M120,230 L320,145 L540,40 L540,230 Z" fill="url(#areaGrad)" opacity="0.3"/>
+                <defs><linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#59B8EB"/><stop offset="100%" stop-color="#59B8EB" stop-opacity="0"/></linearGradient></defs>
+                <!-- Growth line -->
+                <polyline points="120,230 320,145 540,40" fill="none" stroke="#59B8EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Data points -->
+                <circle cx="120" cy="230" r="6" fill="#0F1923" stroke="#59B8EB" stroke-width="2.5"/>
+                <circle cx="320" cy="145" r="6" fill="#0F1923" stroke="#59B8EB" stroke-width="2.5"/>
+                <circle cx="540" cy="40" r="6" fill="#0F1923" stroke="#59B8EB" stroke-width="2.5"/>
+                <!-- Data labels -->
+                <text x="120" y="250" fill="#7a8fa2" font-size="11" text-anchor="middle" font-family="sans-serif">Start</text>
+                <text x="320" y="250" fill="#7a8fa2" font-size="11" text-anchor="middle" font-family="sans-serif">4 Months</text>
+                <text x="540" y="250" fill="#7a8fa2" font-size="11" text-anchor="middle" font-family="sans-serif">1 Year</text>
+                <text x="120" y="220" fill="#e8f0f8" font-size="11" text-anchor="middle" font-weight="bold">₹50K</text>
+                <text x="320" y="135" fill="#e8f0f8" font-size="11" text-anchor="middle" font-weight="bold">₹75K</text>
+                <text x="540" y="30" fill="#e8f0f8" font-size="11" text-anchor="middle" font-weight="bold">₹1.15L</text>
+            </svg>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Challenge</div>
+            <p>When Klient Boost started, the restaurant was averaging approximately <strong>₹50,000 in daily sales</strong>. The objective was to strengthen local demand and build a repeatable marketing engine.</p>
+        </div>
+        <div class="cs-block reveal">
+            <div class="cs-block-title">What We Executed</div>
+            <p>Multiple campaigns, media collaborations, influencer marketing, seasonal and festive campaigns, promotional content and ongoing brand visibility initiatives.</p>
+        </div>
+        <div class="cs-note reveal">
+            <div class="cs-note-label">Business Expansion</div>
+            <p><strong>3 outlets + Nandan Inn</strong> — The brand has continued expanding beyond the initial restaurant operation. The case study demonstrates the role of sustained marketing support within a wider business-growth journey.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 2. EARMACS ======== -->
+<section class="cs-section" id="earmacs">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">03 / Website Development</div>
+            <h2 class="cs-title">EARMACS</h2>
+            <p class="cs-subtitle">A website transformation focused on simplifying digital infrastructure and bringing multiple customer journeys under one roof.</p>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Challenge</div>
+            <p>EARMACS was working with a multi-domain setup. Managing multiple domains, SSL certificates and hosting created recurring operational complexity. The existing layout also needed a clearer, more usable structure.</p>
+        </div>
+
+        <div class="cs-transform reveal">
+            <div class="cs-transform-col before">
+                <h4>Before</h4>
+                <ul><li>Multiple domains</li><li>Multiple SSL</li><li>Hosting management</li><li>Less efficient layout</li></ul>
+            </div>
+            <div class="cs-transform-arrow">→</div>
+            <div class="cs-transform-col process">
+                <h4>Klient Boost</h4>
+                <ul><li>Unified architecture</li><li>Customer journey redesign</li><li>Centralized functionality</li></ul>
+            </div>
+            <div class="cs-transform-arrow">→</div>
+            <div class="cs-transform-col after">
+                <h4>After</h4>
+                <ul><li>One-roof platform</li><li>Booking</li><li>Product display</li><li>Product purchase</li></ul>
+            </div>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Solution</div>
+            <p>We created a one-roof website solution that brings <strong>booking, product display and product purchase</strong> into a unified platform. The implementation also consolidated the domain and SSL requirements so the client could avoid the previous multi-domain management burden.</p>
+        </div>
+
+        <div class="cs-outcome reveal">
+            <div class="cs-outcome-item"><div class="val">1</div><div class="label">Unified platform</div></div>
+            <div class="cs-outcome-item"><div class="val">3</div><div class="label">Core customer functions</div></div>
+            <div class="cs-outcome-item"><div class="icon">↓</div><div class="label">Infrastructure complexity</div></div>
+            <div class="cs-outcome-item"><div class="icon">✓</div><div class="label">Client satisfaction</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 3. VAPOUR'S ======== -->
+<section class="cs-section" id="vapours">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">04 / Social Media & Brand Building</div>
+            <h2 class="cs-title">Vapour's</h2>
+            <p class="cs-subtitle">Building a new café / lounge brand from the construction phase through consistent social media, content and performance marketing.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">623K+</div><div class="desc">Total content views</div></div>
+            <div class="cs-stat"><div class="val">264K+</div><div class="desc">People reached</div></div>
+            <div class="cs-stat"><div class="val">14.8K</div><div class="desc">Content interactions</div></div>
+            <div class="cs-stat"><div class="val">79.6%</div><div class="desc">Views from non-followers</div></div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="cs-chart reveal">
+            <div class="cs-chart-title">Vapour's — Social Performance</div>
+            <svg viewBox="0 0 500 260" style="width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="220" x2="460" y2="220" stroke="rgba(89,184,235,0.15)" stroke-width="1"/>
+                <!-- Bar 1: Views 623K -->
+                <rect x="100" y="30" width="80" height="190" rx="6" fill="url(#barGrad1)" opacity="0.85"/>
+                <text x="140" y="22" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">623.5K</text>
+                <text x="140" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Views</text>
+                <!-- Bar 2: Reach 264K -->
+                <rect x="220" y="100" width="80" height="120" rx="6" fill="url(#barGrad1)" opacity="0.7"/>
+                <text x="260" y="92" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">264.9K</text>
+                <text x="260" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Reach</text>
+                <!-- Bar 3: Interactions 14.8K -->
+                <rect x="340" y="195" width="80" height="25" rx="6" fill="url(#barGrad1)" opacity="0.55"/>
+                <text x="380" y="188" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">14.8K</text>
+                <text x="380" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Interactions</text>
+                <defs><linearGradient id="barGrad1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#59B8EB"/><stop offset="100%" stop-color="#258ec5"/></linearGradient></defs>
+            </svg>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Strategy</div>
+            <p>We began marketing while the business was still in its <strong>construction / pre-launch stage</strong>, using social content, brand communication, campaigns and paid distribution to build recognition and anticipation before relying on the physical outlet alone.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 4. SUGAR ART STUDIO ======== -->
+<section class="cs-section" id="sugar-art">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">05 / Admissions & Awareness</div>
+            <h2 class="cs-title">Sugar Art Studio</h2>
+            <p class="cs-subtitle">Growing the digital presence of a cake-baking and culinary arts academy in Pasighat and supporting student acquisition.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">518K+</div><div class="desc">Total views</div></div>
+            <div class="cs-stat"><div class="val">105K+</div><div class="desc">People reached</div></div>
+            <div class="cs-stat"><div class="val">12K</div><div class="desc">Content interactions</div></div>
+            <div class="cs-stat"><div class="val">76.3%</div><div class="desc">Views from non-followers</div></div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="cs-chart reveal">
+            <div class="cs-chart-title">Sugar Art Studio — Social Performance</div>
+            <svg viewBox="0 0 500 260" style="width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="220" x2="460" y2="220" stroke="rgba(89,184,235,0.15)" stroke-width="1"/>
+                <rect x="100" y="38" width="80" height="182" rx="6" fill="url(#barGrad2)" opacity="0.85"/>
+                <text x="140" y="30" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">518.1K</text>
+                <text x="140" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Views</text>
+                <rect x="220" y="125" width="80" height="95" rx="6" fill="url(#barGrad2)" opacity="0.7"/>
+                <text x="260" y="117" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">105.4K</text>
+                <text x="260" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Reach</text>
+                <rect x="340" y="198" width="80" height="22" rx="6" fill="url(#barGrad2)" opacity="0.55"/>
+                <text x="380" y="191" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">12.0K</text>
+                <text x="380" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Interactions</text>
+                <defs><linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A8D4EE"/><stop offset="100%" stop-color="#258ec5"/></linearGradient></defs>
+            </svg>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Business Impact</div>
+            <p>The marketing helped expand reach beyond the existing audience and contributed to <strong>increased course enquiries and admissions</strong> after marketing began.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 5. FIONA BEAUTY ACADEMY ======== -->
+<section class="cs-section" id="fiona">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">06 / Performance Marketing</div>
+            <h2 class="cs-title">Fiona Beauty Academy</h2>
+            <p class="cs-subtitle">A local student-acquisition campaign focused on reaching prospective beauty and cosmetology students across Tinsukia and nearby areas.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">831K+</div><div class="desc">Total views</div></div>
+            <div class="cs-stat"><div class="val">415K+</div><div class="desc">People reached</div></div>
+            <div class="cs-stat"><div class="val">5.6K</div><div class="desc">Content interactions</div></div>
+            <div class="cs-stat"><div class="val">97.6%</div><div class="desc">Views from non-followers</div></div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="cs-chart reveal">
+            <div class="cs-chart-title">Fiona Beauty Academy — Social Performance</div>
+            <svg viewBox="0 0 500 260" style="width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+                <line x1="60" y1="220" x2="460" y2="220" stroke="rgba(89,184,235,0.15)" stroke-width="1"/>
+                <rect x="100" y="22" width="80" height="198" rx="6" fill="url(#barGrad3)" opacity="0.85"/>
+                <text x="140" y="14" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">831.8K</text>
+                <text x="140" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Views</text>
+                <rect x="220" y="80" width="80" height="140" rx="6" fill="url(#barGrad3)" opacity="0.7"/>
+                <text x="260" y="72" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">415.4K</text>
+                <text x="260" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Reach</text>
+                <rect x="340" y="207" width="80" height="13" rx="6" fill="url(#barGrad3)" opacity="0.55"/>
+                <text x="380" y="200" fill="#e8f0f8" font-size="12" text-anchor="middle" font-weight="bold">5.6K</text>
+                <text x="380" y="240" fill="#7a8fa2" font-size="11" text-anchor="middle">Interactions</text>
+                <defs><linearGradient id="barGrad3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#59B8EB"/><stop offset="100%" stop-color="#132e44"/></linearGradient></defs>
+            </svg>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Business Impact</div>
+            <p>The campaign was designed around <strong>local student acquisition</strong> rather than vanity metrics. Klient Boost used targeted performance marketing to reach prospective students in Tinsukia and nearby areas, and the client reported a <strong>strong increase in student enquiries and admissions</strong> after marketing began.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======== 6. BUNDELI KOTHI ======== -->
+<section class="cs-section" id="bundeli">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">06 / Website Development & Digital Transformation</div>
+            <h2 class="cs-title">Bundeli Kothi</h2>
+            <p class="cs-subtitle">From a failing website to a reliable direct-booking enquiry system.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">1</div><div class="desc">Custom website rebuild</div></div>
+            <div class="cs-stat"><div class="val">1</div><div class="desc">Custom booking engine</div></div>
+            <div class="cs-stat"><div class="val">Email</div><div class="desc">Automated enquiry delivery</div></div>
+            <div class="cs-stat"><div class="val">0</div><div class="desc">Payment gateway required</div></div>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">The Challenge</div>
+            <p>Bundeli Kothi previously lacked a reliable website infrastructure. The existing website experienced frequent errors, pages failed to load, and the site was often unavailable. The owner also did not want an online payment gateway; they wanted booking enquiries delivered directly to email. With a significant share of customers coming from international markets, <strong>reliability and a simple enquiry journey were especially important</strong>.</p>
+        </div>
+
+        <div class="cs-transform reveal">
+            <div class="cs-transform-col before">
+                <h4>Before</h4>
+                <ul><li>Frequent website errors</li><li>Pages not loading</li><li>Frequent downtime</li><li>No suitable booking workflow</li></ul>
+            </div>
+            <div class="cs-transform-arrow">→</div>
+            <div class="cs-transform-col process">
+                <h4>Klient Boost</h4>
+                <ul><li>Custom website rebuild</li><li>Custom booking engine</li><li>Email automation</li><li>Business-specific architecture</li></ul>
+            </div>
+            <div class="cs-transform-arrow">→</div>
+            <div class="cs-transform-col after">
+                <h4>After</h4>
+                <ul><li>Reliable website</li><li>Booking enquiries</li><li>Automatic email notifications</li><li>Owner focuses on operations</li></ul>
+            </div>
+        </div>
+
+        <div class="cs-block reveal">
+            <div class="cs-block-title">Customer Journey</div>
+        </div>
+        <div class="cs-journey reveal">
+            <span class="cs-journey-step">Discover</span>
+            <span class="cs-journey-arrow">→</span>
+            <span class="cs-journey-step">Explore</span>
+            <span class="cs-journey-arrow">→</span>
+            <span class="cs-journey-step">Enquire</span>
+            <span class="cs-journey-arrow">→</span>
+            <span class="cs-journey-step">Automated Email</span>
+            <span class="cs-journey-arrow">→</span>
+            <span class="cs-journey-step">Owner Confirms Booking</span>
+        </div>
+    </div>
+</section>
+
+<!-- ======== CROSS-CLIENT IMPACT ======== -->
+<section class="cs-section" id="impact" style="background:var(--ink);">
+    <div class="container">
+        <div class="cs-header reveal">
+            <div class="cs-number">07 / Cross-Client Impact</div>
+            <h2 class="cs-title">What These Case Studies Demonstrate</h2>
+            <p class="cs-subtitle">Different businesses require different growth levers. The featured portfolio shows four distinct outcome types.</p>
+        </div>
+
+        <div class="cs-stats-bar reveal">
+            <div class="cs-stat"><div class="val">₹50K → ₹1.15L</div><div class="desc">Nandan average daily sales</div></div>
+            <div class="cs-stat"><div class="val">623K+</div><div class="desc">Vapour's views</div></div>
+            <div class="cs-stat"><div class="val">518K+</div><div class="desc">Sugar Art Studio views</div></div>
+            <div class="cs-stat"><div class="val">831K+</div><div class="desc">Fiona Beauty Academy views</div></div>
+        </div>
+
+        <table class="cs-table reveal">
+            <thead>
+                <tr><th>Outcome Type</th><th>Client</th><th>Evidence</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Revenue / Sales Growth</td><td>Nandan Sweets & Snacks</td><td>₹50K/day → ₹1.15L/day (+130%)</td></tr>
+                <tr><td>Digital Infrastructure</td><td>EARMACS</td><td>Multi-domain setup → unified platform</td></tr>
+                <tr><td>Brand / Audience Growth</td><td>Vapour's</td><td>623K+ views • 264K+ reach</td></tr>
+                <tr><td>Admissions / Awareness</td><td>Sugar Art Studio</td><td>518K+ views • 105K+ reach • increased admissions</td></tr>
+                <tr><td>Performance / Student Acquisition</td><td>Fiona Beauty Academy</td><td>831K+ views • 415K+ reach • increased admissions</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ============== CLOSING CTA ============== -->
+<section class="final-cta">
+    <div class="container">
+        <div class="reveal" style="text-align:center;">
+            <h2>We don't build campaigns for the sake of campaigns. <span class="hi">We build marketing systems</span> around the outcome the business actually needs.</h2>
+            <div class="cs-stats-bar" style="max-width:700px;margin:40px auto;">
+                <div class="cs-stat"><div class="val" style="font-size:18px;">Brand</div><div class="desc">Positioning & content</div></div>
+                <div class="cs-stat"><div class="val" style="font-size:18px;">Performance</div><div class="desc">Targeting & acquisition</div></div>
+                <div class="cs-stat"><div class="val" style="font-size:18px;">Digital</div><div class="desc">Websites & infrastructure</div></div>
+                <div class="cs-stat"><div class="val" style="font-size:18px;">Growth</div><div class="desc">Sales, enquiries & admissions</div></div>
+            </div>
+            <button class="btn-primary" onclick="contactUs()">
+                <span>Discuss Your Business</span>
+                <span style="font-size:16px;">→</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand"><img src="klientboost-logo.png" alt="Klient Boost" style="height:32px;filter:brightness(1.3);"></div>
+                <p class="footer-desc">A growth-focused marketing agency helping ambitious businesses turn attention into measurable business growth.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="pricing.html#social-media">Social Media Marketing</a>
+                <a href="pricing.html#ugc-video">UGC Video Production</a>
+                <a href="pricing.html#influencer">Influencer Marketing</a>
+                <a href="pricing.html#performance">Performance Marketing</a>
+                <a href="pricing.html#telecalling">Sales & Telecalling</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <a href="mailto:hello@klientboost.com">hello@klientboost.com</a>
+                <a href="#" onclick="contactUs(); return false;">Start a Project</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Klient Boost. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

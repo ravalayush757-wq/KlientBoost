@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klient Boost — Marketing That Moves Business</title>
+    <meta name="description" content="Klient Boost is a growth-focused marketing agency combining social media, creators, performance marketing and digital experiences to help brands grow.">
+    <meta name="keywords" content="digital marketing agency, performance marketing, social media marketing, UGC video, influencer marketing, website development, Klient Boost">
+    <meta name="author" content="Klient Boost">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="theme-color" content="#0D1117">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="canonical" href="https://www.klientboost.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Klient Boost | Marketing That Moves Business">
+    <meta property="og:description" content="A growth marketing partner for brands ready to turn attention into measurable demand.">
+    <meta property="og:url" content="https://www.klientboost.com/">
+    <meta property="og:site_name" content="Klient Boost">
+    <meta property="og:image" content="https://www.klientboost.com/klientboost-logo.png">
+    <meta property="og:image:alt" content="Klient Boost logo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Klient Boost | Marketing That Moves Business">
+    <meta name="twitter:description" content="A growth marketing partner for brands ready to turn attention into measurable demand.">
+    <meta name="twitter:image" content="https://www.klientboost.com/klientboost-logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============== NAVIGATION ============== -->
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand" aria-label="Klient Boost home"><img src="klientboost-logo.png" alt="Klient Boost" width="320" height="72"></a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">Home</a>
+                <a href="#about">About Us</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="nav-cta" onclick="contactUs()">Let's Talk Growth</button>
+                <button class="mobile-toggle" id="mobileToggle">☰</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ============== HERO SECTION ============== -->
+<section class="hero" id="home">
+    <!-- Background Layers -->
+    <div class="hero-bg">
+        <div class="layer-grid"></div>
+        <div class="layer-glow right"></div>
+        <div class="layer-glow left"></div>
+        <div class="scanline"></div>
+        <div class="hud tl"></div>
+        <div class="hud tr"></div>
+        <div class="hud bl"></div>
+        <div class="hud br"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="hero-inner">
+            <!-- Badge -->
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span>Growth Marketing Agency</span>
+            </div>
+
+            <!-- Slide 1 -->
+            <div class="hero-slide active" data-slide="0">
+                <h1>Marketing That <span class="hi">Moves</span> Business.</h1>
+                <p class="hero-lead">We combine social media, creators, performance marketing and digital experiences to help brands attract attention, generate demand and grow.</p>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hero-slide" data-slide="1">
+                <h1>Don't Just Get Seen. <span class="hi">Get Chosen.</span></h1>
+                <p class="hero-lead">Build a brand people notice, remember and buy from — with content and campaigns designed around business outcomes.</p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="hero-slide" data-slide="2">
+                <h1>From Content to <span class="hi">Customers.</span></h1>
+                <p class="hero-lead">Your marketing should do more than look good. It should create conversations, leads and revenue.</p>
+            </div>
+
+            <!-- CTAs -->
+            <div class="hero-cta-row">
+                <button class="btn-primary" onclick="contactUs()">
+                    <span>Let's Grow</span>
+                    <span style="font-size:16px;">→</span>
+                </button>
+                <a href="case-studies.html" class="btn-ghost" style="color:#fafaf7;border-color:rgba(250,250,247,0.3);box-shadow:0 4px 0 rgba(250,250,247,0.15);">
+                    View Case Studies
+                </a>
+            </div>
+
+            <!-- Slider Dots -->
+            <div class="hero-slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num" data-count="30" data-suffix="%+">0</div>
+                    <div class="lbl">More Business<br>From Month 1</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num" data-count="50" data-suffix="+">0</div>
+                    <div class="lbl">Brands<br>Trusted Us</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num" data-count="6" data-suffix="x">0</div>
+                    <div class="lbl">Average<br>ROAS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== ABOUT US ============== -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <div class="eyebrow">About Us</div>
+                <h2 class="section-title">Growth Is Our <span class="hi">Language.</span></h2>
+                <p class="lead" style="color:#444;">
+                    Klient Boost is a growth-focused marketing agency helping ambitious businesses turn attention into measurable business growth. We bring strategy, content, creators, performance marketing and digital experiences under one roof.
+                </p>
+                <p style="font-size:15px;color:#555;line-height:1.7;margin-bottom:28px;">
+                    Instead of treating every platform as a separate activity, we build marketing systems where every piece of content has a purpose. From building a stronger brand presence to generating qualified enquiries and sales, our approach is built around outcomes.
+                </p>
+                <p style="font-size:15px;color:#555;line-height:1.7;">
+                    We work closely with businesses to understand their market, customers and growth goals before creating the strategy. Because good marketing is not about posting more. It is about making the right people take action.
+                </p>
+            </div>
+            <div class="about-visual">
+                <div class="proof-banner">
+                    <div class="proof-number" data-count="30" data-suffix="%">0</div>
+                    <div class="proof-label">More business from the<br>first month of marketing.</div>
+                    <div class="proof-footnote">Average across client portfolio</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="services-header reveal">
+            <div class="section-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-label">What We Do</span>
+            </div>
+            <h2 class="section-title">Services Built For <span class="hi">Growth</span></h2>
+            <p class="section-subtitle" style="margin:0 auto;">Six core services designed to build visibility, generate demand and convert attention into revenue.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service 1: Social Media Marketing -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 01</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                </div>
+                <h3>Social Media Marketing</h3>
+                <p>Strategy, content, community and platform management designed to build visibility, trust and demand across every channel that matters.</p>
+                <a href="pricing.html#social-media" class="service-view-more">View More →</a>
+            </div>
+
+            <!-- Service 2: UGC Video Production -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 02</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <h3>UGC Video Production</h3>
+                <p>Authentic, creator-style videos designed to make products and services feel relatable, credible and worth trying for your target audience.</p>
+                <a href="pricing.html#ugc-video" class="service-view-more">View More →</a>
+            </div>
+
+            <!-- Service 3: Influencer Marketing -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 03</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <h3>Influencer Marketing</h3>
+                <p>Creator partnerships that connect brands with relevant audiences through strategic campaigns, collaborations and authentic storytelling.</p>
+                <a href="pricing.html#influencer" class="service-view-more">View More →</a>
+            </div>
+
+            <!-- Service 4: Website Development -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 04</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <h3>Website Development</h3>
+                <p>High-converting websites that communicate your value clearly and turn visitors into enquiries and paying customers.</p>
+                <a href="pricing.html#website" class="service-view-more">View More →</a>
+            </div>
+
+            <!-- Service 5: Performance Marketing -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 05</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </div>
+                <h3>Performance Marketing</h3>
+                <p>Data-driven paid campaigns focused on qualified traffic, leads, conversions and profitable growth across all major platforms.</p>
+                <a href="pricing.html#performance" class="service-view-more">View More →</a>
+            </div>
+
+            <!-- Service 6: Sales & Telecalling Solutions -->
+            <div class="service-card reveal">
+                <div class="card-number">◆ 06</div>
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+                <h3>Sales & Telecalling Solutions</h3>
+                <p>Dedicated telecalling teams for cold calling, lead qualification, appointment booking, customer follow-up and CRM-integrated sales support.</p>
+                <a href="pricing.html#telecalling" class="service-view-more">View More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== CLIENT TRUST STRIP ============== -->
+<section class="trust-section">
+    <div class="trust-header">
+        <div class="trust-label">Trusted By Businesses Across</div>
+        <div class="trust-title">Industries We Serve</div>
+    </div>
+    <div class="trust-marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">Hospitality</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Food & Beverage</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Real Estate</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Furniture & Home</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Lifestyle</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Education</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Healthcare</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">E-Commerce</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Technology</span><span class="marquee-sep">◆</span>
+            <!-- Duplicate for infinite scroll -->
+            <span class="marquee-item">Hospitality</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Food & Beverage</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Real Estate</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Furniture & Home</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Lifestyle</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Education</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Healthcare</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">E-Commerce</span><span class="marquee-sep">◆</span>
+            <span class="marquee-item">Technology</span><span class="marquee-sep">◆</span>
+        </div>
+    </div>
+</section>
+
+<!-- ============== PRICING CTA ============== -->
+<section class="packages" id="pricing">
+    <div class="container" style="text-align:center;">
+        <div class="reveal">
+            <div class="section-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-label">Pricing</span>
+            </div>
+            <h2 class="section-title">Transparent <span class="hi">Pricing</span> For Every Service</h2>
+            <p class="section-subtitle" style="margin:0 auto 40px;">We offer three tiers — Basic, Standard and Professional — across every service. Compare plans and choose what fits your business.</p>
+            <a href="pricing.html" class="btn-primary" style="display:inline-flex;">
+                <span>View All Pricing</span>
+                <span style="font-size:16px;">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============== TESTIMONIALS ============== -->
+<section class="testimonials">
+    <div class="container">
+        <div class="testimonials-header reveal">
+            <div class="section-badge" style="background:rgba(89,184,235,0.08);border-color:rgba(89,184,235,0.25);">
+                <span class="badge-dot"></span>
+                <span class="badge-label">Testimonials</span>
+            </div>
+            <h2 class="section-title" style="color:var(--paper);">What Our <span class="hi">Clients</span> Say</h2>
+            <p class="section-subtitle" style="color:rgba(250,250,247,0.6);margin:0 auto;">Don't just take our word for it — hear from the businesses we've helped grow.</p>
+        </div>
+    </div>
+
+    <div class="testimonials-track-wrapper">
+        <div class="testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Working with Klient Boost has been a game-changer. Their strategic approach to social media and performance marketing generated a steady flow of qualified leads from the very first month."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">RK</div>
+                    <div class="testimonial-author">
+                        <h4>Rahul Kumar</h4>
+                        <p>CEO, Urban Estates</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Their content strategy completely transformed our brand presence online. We went from inconsistent posting to a system that drives real conversations and conversions every week."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">PS</div>
+                    <div class="testimonial-author">
+                        <h4>Priya Sharma</h4>
+                        <p>Founder, Bloom Interiors</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"The UGC videos Klient Boost created for us outperformed every ad creative we'd tried before. Authentic, relatable content that actually converts — exactly what we needed."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">AM</div>
+                    <div class="testimonial-author">
+                        <h4>Arjun Mehta</h4>
+                        <p>Marketing Head, FreshBite</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Our website redesign by Klient Boost doubled our conversion rate in just 6 weeks. They understand how to blend great design with clear messaging that drives action."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">NP</div>
+                    <div class="testimonial-author">
+                        <h4>Neha Patel</h4>
+                        <p>Director, LearnSphere Academy</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 5 -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"We tried multiple agencies before Klient Boost. The difference? They actually understand business outcomes, not just vanity metrics. Our ROAS has never been better."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">VT</div>
+                    <div class="testimonial-author">
+                        <h4>Vikram Thakur</h4>
+                        <p>Co-founder, StyleCraft Home</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <!-- Duplicates for infinite scroll -->
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Working with Klient Boost has been a game-changer. Their strategic approach to social media and performance marketing generated a steady flow of qualified leads from the very first month."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">RK</div>
+                    <div class="testimonial-author">
+                        <h4>Rahul Kumar</h4>
+                        <p>CEO, Urban Estates</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Their content strategy completely transformed our brand presence online. We went from inconsistent posting to a system that drives real conversations and conversions every week."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">PS</div>
+                    <div class="testimonial-author">
+                        <h4>Priya Sharma</h4>
+                        <p>Founder, Bloom Interiors</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"The UGC videos Klient Boost created for us outperformed every ad creative we'd tried before. Authentic, relatable content that actually converts — exactly what we needed."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">AM</div>
+                    <div class="testimonial-author">
+                        <h4>Arjun Mehta</h4>
+                        <p>Marketing Head, FreshBite</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"Our website redesign by Klient Boost doubled our conversion rate in just 6 weeks. They understand how to blend great design with clear messaging that drives action."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">NP</div>
+                    <div class="testimonial-author">
+                        <h4>Neha Patel</h4>
+                        <p>Director, LearnSphere Academy</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote-mark">"</div>
+                <p class="testimonial-text">"We tried multiple agencies before Klient Boost. The difference? They actually understand business outcomes, not just vanity metrics. Our ROAS has never been better."</p>
+                <div class="testimonial-footer">
+                    <div class="testimonial-avatar">VT</div>
+                    <div class="testimonial-author">
+                        <h4>Vikram Thakur</h4>
+                        <p>Co-founder, StyleCraft Home</p>
+                    </div>
+                </div>
+                <div class="testimonial-stars">★★★★★</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="final-cta">
+    <div class="container">
+        <div class="reveal">
+            <h2>Your Business Has Bigger Goals. Your Marketing <span class="hi">Should Too.</span></h2>
+            <p class="lead">Tell us where you are today, where you want to go, and we'll help you build the marketing system to get there.</p>
+            <div class="final-cta-buttons">
+                <button class="btn-primary" onclick="contactUs()">
+                    <span>Let's Talk Growth</span>
+                    <span style="font-size:16px;">→</span>
+                </button>
+                <a href="portfolio.html" class="btn-ghost" style="color:#fafaf7;border-color:rgba(250,250,247,0.3);box-shadow:0 4px 0 rgba(250,250,247,0.15);">
+                    See Our Work
+                </a>
+            </div>
+            <div class="final-meta" style="margin-top:40px;">
+                <span class="final-meta-item">Strategy First</span>
+                <span class="final-meta-item">Outcome Focused</span>
+                <span class="final-meta-item">Full Transparency</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Klient<span class="brand-accent">Boost</span></div>
+                <p class="footer-desc">A growth-focused marketing agency helping ambitious businesses turn attention into measurable business growth.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="#about">About Us</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="case-studies.html">Case Studies</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <a href="pricing.html#social-media">Social Media Marketing</a>
+                <a href="pricing.html#ugc-video">UGC Video Production</a>
+                <a href="pricing.html#influencer">Influencer Marketing</a>
+                <a href="pricing.html#performance">Performance Marketing</a>
+                <a href="pricing.html#telecalling">Sales & Telecalling</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get In Touch</h4>
+                <a href="mailto:hello@klientboost.com">hello@klientboost.com</a>
+                <a href="#" onclick="contactUs(); return false;">Start a Conversation</a>
+                <a href="#" onclick="contactUs(); return false;">Book a Strategy Call</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Klient Boost. All rights reserved. Growth-focused marketing agency.
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
