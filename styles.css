@@ -2542,3 +2542,50 @@ h1, h2, h3, h4 {
         transition-duration: .01ms !important;
     }
 }
+
+/* Contrast pass: readable typography on every dark surface; navbar stays unchanged. */
+.hero, .page-hero, .testimonials, .final-cta, .site-footer { color: #F8FCFF; }
+.hero h1, .page-hero h1, .testimonials h2, .final-cta h2, .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4 { color: #FFFFFF; }
+.hero p, .page-hero p, .testimonials p, .final-cta p, .site-footer p { color: #C9DCE8; }
+.hero a:not(.btn-primary), .page-hero a:not(.btn-primary), .testimonials a:not(.btn-primary), .final-cta a:not(.btn-primary), .site-footer a { color: #D9EEFA; }
+.hero a:not(.btn-primary):hover, .page-hero a:not(.btn-primary):hover, .testimonials a:not(.btn-primary):hover, .final-cta a:not(.btn-primary):hover, .site-footer a:hover { color: #59B8EB; }
+.testimonial-text { color: #EDF8FF !important; }
+.testimonial-author p, .footer-col p, .footer-bottom { color: #B6CBD8 !important; }
+.testimonial-stars, .testimonial-quote-mark, .footer-col h4 { color: #8FD0F2 !important; }
+.footer-logo { display: inline-flex; align-items: center; margin-bottom: 18px; }
+.footer-logo img { display: block; width: min(190px, 100%); height: auto; filter: brightness(1.15); }
+.about, .services, .packages, .case-studies-grid, .portfolio-grid, .faq-list { color: #111827; }
+.about p, .services p, .packages p, .case-card p, .faq-answer { color: #425466; }
+
+/* Primary controls use the deep navy sampled from the logo. */
+.nav-cta, .btn-primary, .package-cta, .filter-tab.active, .filter-tab:hover {
+    background: linear-gradient(135deg, #171D2A 0%, #242B3A 100%);
+    border-color: #242B3A;
+    color: #FFFFFF;
+    box-shadow: 0 10px 24px rgba(23, 29, 42, .24);
+}
+.nav-cta:hover, .btn-primary:hover, .package-cta:hover, .filter-tab.active:hover {
+    background: #111722;
+    border-color: #111722;
+    box-shadow: 0 14px 30px rgba(23, 29, 42, .34);
+}
+
+/* Darker blue emphasis, matching the deeper grade of the brand mark. */
+.hi { background: linear-gradient(135deg, #1D557C 0%, #2873A5 100%); color: #FFFFFF; }
+.hero h1 .hi { background: linear-gradient(135deg, #1D557C 0%, #2873A5 100%); color: #FFFFFF; transform: none; }
+
+/* Dark-theme readability: lift headings and supporting copy without making them stark white. */
+.trust-section .trust-title,
+.testimonials .section-title,
+.final-cta h2,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4 { color: #C9DCE8 !important; }
+.trust-section .trust-label,
+.testimonials .badge-label,
+.final-cta .eyebrow { color: #77C7EF !important; }
+.trust-section .marquee-item { color: #AFC3D1; }
+.testimonials .section-subtitle,
+.final-cta .lead,
+.site-footer p,
+.site-footer .footer-bottom { color: #AFC3D1 !important; }
