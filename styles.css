@@ -2640,6 +2640,7 @@ h1, h2, h3, h4 {
 /* Bebas Neue has its own condensed proportions; avoid synthetic weight and compressed tracking. */
 h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: .02em; }
 .hero h1, .page-hero h1 { letter-spacing: .01em; }
+.hero h1 .hi { background: #029ef8; border-radius: 0; }
 
 /* Apply the reference display-font metrics consistently throughout the interface. */
 .section-title,
@@ -2667,3 +2668,16 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
 /* Deep royal blue sampled from the supplied brand reference. */
 .nav-cta, .btn-primary, .package-cta { background: #164A96; }
 .nav-cta:hover, .btn-primary:hover, .package-cta:hover { background: #103C7D; }
+
+/* Mobile motion and footer layout. Touch devices can retain :hover, so never pause these rails there. */
+@media (max-width: 768px) {
+    .marquee-track { animation: marqueeScroll 32s linear infinite; animation-play-state: running; }
+    .client-gallery-track { animation: client-gallery-scroll 95s linear infinite; animation-play-state: running; }
+    .marquee-track:hover, .client-gallery:hover .client-gallery-track { animation-play-state: running; }
+}
+@media (max-width: 480px) {
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; row-gap: 30px; }
+    .footer-grid > :first-child, .footer-grid > :last-child { grid-column: 1 / -1; }
+    .footer-col { min-width: 0; }
+    .footer-col a { overflow-wrap: anywhere; }
+}
