@@ -2681,3 +2681,31 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     .footer-col { min-width: 0; }
     .footer-col a { overflow-wrap: anywhere; }
 }
+
+/* Final section rhythm overrides. */
+.hero, .page-hero, .trust-section, .final-cta, .site-footer { background: #0D1117; }
+.about, .packages { background: #EAF7FF; color: #0D1117; }
+.services, .testimonials { background: #132A3D; color: #EAF7FF; }
+.services .section-title, .services .section-subtitle, .services h3, .testimonials .section-title { color: #EAF7FF !important; }
+.services .service-card { background: #183247; border-color: rgba(168, 212, 238, .22); }
+.services .service-card p { color: #C4D8E6; }
+.packages .section-title, .packages .section-subtitle, .packages h3 { color: #0D1117; }
+.hi, .hero h1 .hi { transform: skewX(-2deg); }
+:is(.service-card, .package-card, .case-card, .portfolio-item, .testimonial-card, .proof-banner, .client-gallery-item, .cs-card, .cs-stat, .cs-chart, .cs-note, .cs-table-wrap, .faq-item) { box-shadow: 0 14px 34px rgba(0, 0, 0, .28), 0 2px 0 rgba(89, 184, 235, .12); }
+:is(.service-card, .package-card, .case-card, .portfolio-item, .testimonial-card, .client-gallery-item, .cs-card, .cs-stat, .cs-chart, .cs-note):hover { box-shadow: 0 20px 44px rgba(0, 0, 0, .36), 0 2px 0 rgba(89, 184, 235, .2); }
+
+/* About typography: one consistent hierarchy on the bright section. */
+.about .section-title { color: #0D1117; font-size: clamp(40px, 4.4vw, 60px); line-height: 1.08; }
+.about .lead { color: #203B50 !important; font-size: clamp(19px, 1.7vw, 21px); line-height: 1.55; }
+.about-text > p:not(.lead) { color: #38556A !important; font-size: 17px !important; line-height: 1.72 !important; }
+
+/* Every highlighted phrase remains a sharp-edged rectangle. */
+.hi, .hero h1 .hi { border-radius: 0 !important; }
+
+/* Silent autoplay previews with an explicit opt-in sound control. */
+.portfolio-video { background: #0D1117; }
+.portfolio-video video { display: block; width: 100%; height: 100%; object-fit: cover; background: #0D1117; }
+.video-sound-toggle { position: absolute; top: 14px; right: 14px; z-index: 3; padding: 8px 11px; border: 1px solid rgba(255, 255, 255, .42); border-radius: 6px; background: rgba(13, 17, 23, .82); color: #FFFFFF; font-family: var(--f-mono); font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; backdrop-filter: blur(8px); }
+.video-sound-toggle:hover, .video-sound-toggle:focus-visible { background: #164A96; border-color: #164A96; }
+.portfolio-video .portfolio-overlay { pointer-events: none; }
+@media (max-width: 768px) { .video-sound-toggle { top: 10px; right: 10px; } }

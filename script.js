@@ -23,11 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
     'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.57.jpeg', 'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.57 (1).jpeg',
     'Portfolio Images/WhatsApp Image 2026-08-22 at 16.41.58.jpeg', 'Portfolio Images/WhatsApp Image 2026-08-22 at 17.20.29.jpeg'
   ]);
+  const portfolioVideos = [
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/Comment “PDF” 🏡If you want to learn how to create content that converts, I  broke down my strat.mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/DNG NOBLE SKY[04].mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/Lehigh Acres is where the deals are RIGHT NOW 👀🔥Nearly 2,000 sq ft • 3 Beds • 3 Baths • Brand-.mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/Lucknow has been late on deliveries in the Real Estate Market heres why!#lucknow #realesate #oc.mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/MORE PHOTOS & INFORMATION BELOW 🔗https---715-sunridge-drive.kelsieblevinsrealestate.com-Newly O.mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/reel 02.mov' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/SHREEJI ELLORA 01.mp4' },
+    { category: 'influencer', path: 'Influencer-20260824T181626Z-1-001/Influencer/When you work with the best agents, “good enough” isn’t in the playbook. So we fly out the best .mp4' },
+    { category: 'performance', path: 'Performance/🤯@sultansaray.eg #videography #filmmaker.mp4' },
+    { category: 'performance', path: 'Performance/At JW Marriott Hotel Bengaluru, Family by JW brings loved ones closer through experiences crafte.mp4' },
+    { category: 'performance', path: 'Performance/Came for the plot.Stayed for the flavours. .[zuki, pan asian restaurant, comic style reel, food .mp4' },
+    { category: 'performance', path: 'Performance/Friendly reminder- Saturdays are for staying out.Especially when the DJ is playing, the cocktail.mp4' },
+    { category: 'performance', path: 'Performance/From its speakeasy-inspired interiors to its elevated cocktails and refined Japanese cuisine, Un.mp4' },
+    { category: 'performance', path: 'Performance/From sunrise to sundown, Aqua by The Park is your perfect all-day escape.Start your day slow wit.mp4' },
+    { category: 'performance', path: 'Performance/Mu work for @sultansaray.eg ❤🎬#videography #filmmaker.mp4' },
+    { category: 'performance', path: 'Performance/Sip, dine and unwind under a textured moonlit canopy. Our curated cuisine and signature drinks a.mp4' },
+    { category: 'performance', path: 'Performance/Your brand’s vision, painted with light. 🖌️ #brandfilm #cinematicstorytelling #showmofilms.mp4' }
+  ];
   const imageUrl = (path) => encodeURI(path);
   const grid = document.querySelector('#portfolioGrid');
   if (grid) {
     const categories = ['social', 'ugc', 'influencer', 'websites', 'performance'];
-    grid.innerHTML = portfolioImages.map((path, index) => `<article class="portfolio-item reveal visible" data-category="${categories[index % categories.length]}"><img src="${imageUrl(path)}" alt="Klient Boost portfolio project ${index + 1}" loading="lazy" decoding="async"><div class="portfolio-overlay"><h4>Klient Boost</h4><div class="portfolio-meta">Portfolio project ${index + 1}</div></div></article>`).join('');
+    const imageCards = portfolioImages.map((path, index) => `<article class="portfolio-item reveal visible" data-category="${categories[index % categories.length]}"><img src="${imageUrl(path)}" alt="Klient Boost portfolio project ${index + 1}" loading="lazy" decoding="async"><div class="portfolio-overlay"><h4>Klient Boost</h4><div class="portfolio-meta">Portfolio project ${index + 1}</div></div></article>`);
+    const videoCards = portfolioVideos.map((video, index) => `<article class="portfolio-item portfolio-video reveal visible" data-category="${video.category}"><video autoplay muted loop playsinline preload="metadata" aria-label="Klient Boost ${video.category} video ${index + 1}"><source src="${imageUrl(video.path)}"></video><button class="video-sound-toggle" type="button" aria-label="Play video with sound">Sound on</button><div class="portfolio-overlay"><h4>${video.category === 'influencer' ? 'Influencer' : 'Performance'} Video</h4><div class="portfolio-meta">Tap sound on to listen</div></div></article>`);
+    grid.innerHTML = [...imageCards, ...videoCards].join('');
+    grid.querySelectorAll('.video-sound-toggle').forEach((button) => button.addEventListener('click', () => {
+      const video = button.closest('.portfolio-video').querySelector('video');
+      video.muted = !video.muted;
+      button.textContent = video.muted ? 'Sound on' : 'Sound off';
+      button.setAttribute('aria-label', video.muted ? 'Play video with sound' : 'Mute video');
+      video.play();
+    }));
   }
   const clientGallery = document.querySelector('#clientGalleryTrack');
   if (clientGallery) {
@@ -37,4 +65,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const filter = tab.dataset.filter;
     grid.querySelectorAll('.portfolio-item').forEach((item) => { item.hidden = !(filter === 'all' || item.dataset.category === filter); });
   }));
+  if (grid && tabs.length) tabs[0].click();
 });
