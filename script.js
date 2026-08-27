@@ -42,12 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     { category: 'performance', path: 'Performance/Sip, dine and unwind under a textured moonlit canopy. Our curated cuisine and signature drinks a.mp4' },
     { category: 'performance', path: 'Performance/Your brand’s vision, painted with light. 🖌️ #brandfilm #cinematicstorytelling #showmofilms.mp4' }
   ];
-  const imageUrl = (path) => encodeURI(path);
+  const imageUrl = (path) => path.split('/').map(segment => encodeURIComponent(segment)).join('/');
   const grid = document.querySelector('#portfolioGrid');
   if (grid) {
     const categories = ['social', 'ugc', 'influencer', 'websites', 'performance'];
     const imageCards = portfolioImages.map((path, index) => `<article class="portfolio-item reveal visible" data-category="${categories[index % categories.length]}"><img src="${imageUrl(path)}" alt="Klient Boost portfolio project ${index + 1}" loading="lazy" decoding="async"><div class="portfolio-overlay"><h4>Klient Boost</h4><div class="portfolio-meta">Portfolio project ${index + 1}</div></div></article>`);
-    const videoCards = portfolioVideos.map((video, index) => `<article class="portfolio-item portfolio-video reveal visible" data-category="${video.category}"><video autoplay muted loop playsinline preload="metadata" aria-label="Klient Boost ${video.category} video ${index + 1}"><source src="${imageUrl(video.path)}"></video><button class="video-sound-toggle" type="button" aria-label="Play video with sound">Sound on</button><div class="portfolio-overlay"><h4>${video.category === 'influencer' ? 'Influencer' : 'Performance'} Video</h4><div class="portfolio-meta">Tap sound on to listen</div></div></article>`);
+    const videoType = (p) => p.endsWith('.mov') ? 'video/quicktime' : 'video/mp4';
+    const videoCards = portfolioVideos.map((video, index) => `<article class="portfolio-item portfolio-video reveal visible" data-category="${video.category}"><video autoplay muted loop playsinline preload="metadata" aria-label="Klient Boost ${video.category} video ${index + 1}"><source src="${imageUrl(video.path)}" type="${videoType(video.path)}"></video><button class="video-sound-toggle" type="button" aria-label="Play video with sound">Sound on</button><div class="portfolio-overlay"><h4>${video.category === 'influencer' ? 'Influencer' : 'Performance'} Video</h4><div class="portfolio-meta">Tap sound on to listen</div></div></article>`);
     grid.innerHTML = [...imageCards, ...videoCards].join('');
     grid.querySelectorAll('.video-sound-toggle').forEach((button) => button.addEventListener('click', () => {
       const video = button.closest('.portfolio-video').querySelector('video');
