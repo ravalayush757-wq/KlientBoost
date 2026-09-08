@@ -28,6 +28,7 @@
     --f-display: 'Bebas Neue', sans-serif;
     --f-body: 'Inter', 'Archivo', sans-serif;
     --f-mono: 'JetBrains Mono', monospace;
+    --f-num: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     /* Spacing */
     --section-pad: clamp(56px, 8vw, 110px);
@@ -814,34 +815,56 @@ section.dark .btn-ghost:hover {
 .hero-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-top: 56px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: stretch;
+    margin-top: 52px;
+    padding: 24px 0;
+    border: 1px solid rgba(89, 184, 235, 0.16);
+    border-radius: var(--radius-md);
+    background: rgba(15, 25, 35, 0.7);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     width: 100%;
     max-width: 720px;
 }
 
 .hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     text-align: center;
+    padding: 4px 18px;
+    position: relative;
+}
+
+.hero-stat + .hero-stat {
+    border-left: 1px solid rgba(89, 184, 235, 0.14);
 }
 
 .hero-stat .num {
-    font-family: var(--f-display);
-    font-size: clamp(32px, 4vw, 48px);
+    font-family: var(--f-num);
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 700;
     color: var(--primary);
-    line-height: 1;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
 }
 
 .hero-stat .lbl {
     font-family: var(--f-mono);
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(250, 250, 247, 0.5);
-    margin-top: 8px;
-    line-height: 1.4;
+    color: rgba(250, 250, 247, 0.65);
+    margin-top: 10px;
+    line-height: 1.45;
+    min-height: 2.9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
 /* ============== ABOUT SECTION ============== */
@@ -881,10 +904,12 @@ section.dark .btn-ghost:hover {
 }
 
 .proof-banner .proof-number {
-    font-family: var(--f-display);
-    font-size: clamp(56px, 7vw, 80px);
+    font-family: var(--f-num);
+    font-size: clamp(52px, 6.5vw, 76px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
     color: var(--primary);
-    line-height: 1;
+    line-height: 1.1;
     position: relative;
     z-index: 1;
     text-shadow: 0 0 40px rgba(89, 184, 235, 0.4);
@@ -2302,13 +2327,13 @@ h1, h2, h3, h4 {
 }
 
 .hero-stats {
-    border-color: rgba(89, 184, 235, .15);
-    background: rgba(255, 255, 255, .03);
-    backdrop-filter: blur(12px);
+    border: 1px solid rgba(89, 184, 235, .16);
+    background: rgba(15, 25, 35, .7);
+    backdrop-filter: blur(16px);
 }
 
 .hero-stat+.hero-stat {
-    border-color: rgba(89, 184, 235, .15);
+    border-left: 1px solid rgba(89, 184, 235, .14);
 }
 
 /* — Section Headings — */
@@ -2351,21 +2376,30 @@ h1, h2, h3, h4 {
     border-color: rgba(89, 184, 235, .2);
 }
 
-/* #029ef8 hover for service & pricing cards */
-.service-card:hover {
-    background: #029ef8 !important;
-    border-color: #029ef8 !important;
+/* #029ef8 atmospheric background hover for service & package cards */
+.service-card:hover,
+.package-card:hover {
+    background: linear-gradient(180deg, rgba(2, 158, 248, 0.12) 0%, rgba(2, 158, 248, 0.03) 100%), var(--paper-2) !important;
+    border-color: rgba(2, 158, 248, 0.55) !important;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .4), 0 0 28px rgba(2, 158, 248, .18) !important;
 }
 .service-card:hover h3,
-.service-card:hover p,
-.service-card:hover .card-number,
-.service-card:hover .service-view-more {
-    color: #fff !important;
+.package-card:hover h3 {
+    color: #ffffff !important;
+}
+.service-card:hover p {
+    color: #cbd5e1 !important;
+}
+.service-card:hover .card-number {
+    color: #029ef8 !important;
 }
 .service-card:hover .card-icon {
-    background: rgba(255,255,255,0.15) !important;
-    color: #fff !important;
-    border-color: rgba(255,255,255,0.3) !important;
+    background: rgba(2, 158, 248, 0.15) !important;
+    color: #029ef8 !important;
+    border-color: rgba(2, 158, 248, 0.4) !important;
+}
+.service-card:hover .service-view-more {
+    color: #029ef8 !important;
 }
 
 .service-card h3,
@@ -2482,27 +2516,26 @@ h1, h2, h3, h4 {
 }
 
 .pricing-card:hover {
-    background: #029ef8 !important;
-    border-color: #029ef8 !important;
-    box-shadow: 0 22px 50px rgba(2, 158, 248, .35);
-    color: #fff;
+    background: linear-gradient(180deg, rgba(2, 158, 248, 0.14) 0%, rgba(2, 158, 248, 0.04) 100%), var(--paper-2) !important;
+    border-color: rgba(2, 158, 248, 0.6) !important;
+    box-shadow: 0 22px 50px rgba(0, 0, 0, .45), 0 0 32px rgba(2, 158, 248, .2) !important;
 }
-.pricing-card:hover .pricing-tier-tag,
-.pricing-card:hover .pricing-price,
-.pricing-card:hover .pricing-note,
 .pricing-card:hover h3 {
-    color: #fff !important;
+    color: #ffffff !important;
+}
+.pricing-card:hover .pricing-price {
+    color: #ffffff !important;
+}
+.pricing-card:hover .pricing-tier-tag {
+    color: #029ef8 !important;
 }
 .pricing-card:hover .pricing-features li {
-    color: rgba(255,255,255,0.9) !important;
-    border-color: rgba(255,255,255,0.2) !important;
-}
-.pricing-card:hover .pricing-features li::before {
-    color: #fff !important;
+    color: #cbd5e1 !important;
 }
 .pricing-card:hover .pricing-cta {
-    background: #fff !important;
-    color: #029ef8 !important;
+    background: #029ef8 !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(2, 158, 248, 0.35);
 }
 
 .pricing-card.popular {
@@ -2852,23 +2885,24 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
 /* --- Card info bar --- */
 .card-info {
     padding: 14px 16px;
-    background: var(--paper);
-    border-top: 1px solid rgba(0,0,0,0.06);
+    background: #111a24;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 .card-info h4 {
     font-family: var(--f-display);
-    font-size: 18px;
-    color: var(--ink);
+    font-size: 19px;
+    color: #ffffff !important;
     margin-bottom: 4px;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
 }
 .card-tag {
     font-family: var(--f-mono);
     font-size: 10.5px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--primary);
+    color: #ffffff !important;
+    opacity: 0.85;
 }
 
 /* --- Video Card --- */
@@ -3156,7 +3190,8 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     display: flex;
     justify-content: space-between;
     padding: 12px 16px 14px;
-    background: var(--ink);
+    background: #0b1219;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     gap: 8px;
 }
 .metric-stat {
@@ -3167,26 +3202,66 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     text-align: center;
 }
 .metric-value {
-    font-family: var(--f-display);
-    font-size: 22px;
-    color: var(--paper);
+    font-family: var(--f-num) !important;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff !important;
     line-height: 1.2;
+    letter-spacing: -0.01em;
 }
 .metric-label {
     font-family: var(--f-mono);
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(250,250,247,0.45);
-    margin-top: 2px;
+    color: #ffffff !important;
+    margin-top: 3px;
+    opacity: 0.92;
 }
 .metric-growth {
     font-family: var(--f-mono);
     font-size: 10px;
     font-weight: 700;
-    color: #4ade80;
+    color: #4ade80 !important;
     margin-top: 3px;
+}
+
+/* Global unclustered, legible numerical typography for sales and metrics */
+.hero-stat .num,
+.proof-banner .proof-number,
+.cs-hero-stat .num,
+.cs-stat .val,
+.cs-outcome-item .val,
+.metric-value,
+.pricing-price,
+.package-price,
+.card-number {
+    font-family: var(--f-num) !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em !important;
+    font-feature-settings: "tnum" 1;
+}
+
+/* Social media card white text enhancements */
+.social-metric-card .card-info {
+    background: #111a24 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.social-metric-card .card-info h4 {
+    color: #ffffff !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+.social-metric-card .card-info .card-tag {
+    color: #ffffff !important;
+    opacity: 0.85;
+}
+.social-metric-card svg text {
+    fill: #cbd5e1;
+}
+.social-metric-card svg text[fill="#4ade80"] {
+    fill: #4ade80 !important;
 }
 
 /* --- Responsive --- */
