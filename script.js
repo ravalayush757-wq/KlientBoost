@@ -41,6 +41,52 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides = [...document.querySelectorAll('.hero-slide')]; const dots = [...document.querySelectorAll('.hero-slider-dots .dot')];
   if (slides.length) { let active = 0; let timer; const show = (index) => { active = (index + slides.length) % slides.length; slides.forEach((slide, i) => slide.classList.toggle('active', i === active)); dots.forEach((dot, i) => { dot.classList.toggle('active', i === active); dot.setAttribute('aria-current', i === active ? 'true' : 'false'); }); }; const restart = () => { clearInterval(timer); if (!reduceMotion) timer = setInterval(() => show(active + 1), 5500); }; dots.forEach((dot, index) => { dot.tabIndex = 0; dot.setAttribute('role', 'button'); dot.setAttribute('aria-label', `Show message ${index + 1}`); dot.addEventListener('click', () => { show(index); restart(); }); dot.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); dot.click(); } }); }); show(0); restart(); }
   const reveal = document.querySelectorAll('.reveal'); const observer = !reduceMotion && 'IntersectionObserver' in window ? new IntersectionObserver((entries, self) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); self.unobserve(entry.target); } }), { threshold: .12 }) : null; reveal.forEach((item) => observer ? observer.observe(item) : item.classList.add('visible'));
+
+  /* Enhanced scroll animations — parallax hero backgrounds + floating particles on all sections */
+  if (!reduceMotion) {
+    /* Parallax: hero background elements shift on scroll */
+    const heroBg = document.querySelector('.hero-bg, .page-hero .hero-bg');
+    const heroParticles = document.querySelector('.hero-particles');
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        if (heroBg) heroBg.style.transform = `translateY(${scrollY * 0.35}px)`;
+        if (heroParticles) heroParticles.style.transform = `translateY(${scrollY * 0.2}px)`;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* Stagger reveal: cards in grids animate one-by-one */
+    document.querySelectorAll('.services-grid, .packages-grid, .pricing-grid, .case-studies-grid, .portfolio-masonry').forEach((grid) => {
+      const cards = grid.querySelectorAll('.reveal');
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.08}s`;
+      });
+    });
+
+    /* Floating ambient particles on every major section */
+    document.querySelectorAll('.services, .packages, .testimonials, .final-cta, .pricing-section').forEach((section) => {
+      if (section.querySelector('.section-particles')) return;
+      const particlesDiv = document.createElement('div');
+      particlesDiv.className = 'section-particles';
+      particlesDiv.setAttribute('aria-hidden', 'true');
+      for (let i = 0; i < 3; i++) {
+        const p = document.createElement('div');
+        p.className = 'section-particle';
+        p.style.left = `${15 + Math.random() * 70}%`;
+        p.style.animationDelay = `${Math.random() * 4}s`;
+        p.style.animationDuration = `${6 + Math.random() * 6}s`;
+        particlesDiv.appendChild(p);
+      }
+      section.style.position = section.style.position || 'relative';
+      section.style.overflow = 'hidden';
+      section.appendChild(particlesDiv);
+    });
+  }
   const count = (element) => { const target = Number(element.dataset.count); const suffix = element.dataset.suffix || ''; const start = performance.now(); const render = (now) => { const p = Math.min((now - start) / 1400, 1); element.textContent = `${Math.round(target * (1 - (1 - p) ** 3))}${suffix}`; if (p < 1) requestAnimationFrame(render); }; requestAnimationFrame(render); }; const counterObserver = !reduceMotion && 'IntersectionObserver' in window ? new IntersectionObserver((entries, self) => entries.forEach((entry) => { if (entry.isIntersecting) { count(entry.target); self.unobserve(entry.target); } }), { threshold: .55 }) : null; document.querySelectorAll('[data-count]').forEach((item) => counterObserver ? counterObserver.observe(item) : count(item));
   
   document.querySelectorAll('.case-toggle').forEach((button) => { button.setAttribute('role', 'button'); button.tabIndex = 0; const toggleCase = () => { const detail = button.closest('.case-card')?.querySelector('.case-detail'); if (!detail) return; const open = detail.classList.toggle('open'); button.textContent = open ? 'Close case study' : 'Read case study'; button.setAttribute('aria-expanded', String(open)); }; button.addEventListener('click', toggleCase); button.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); toggleCase(); } }); });

@@ -2153,23 +2153,24 @@ section.dark .btn-ghost:hover {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    background: #029ef8;
     color: #fff;
     border: none;
-    border-radius: var(--radius-full);
+    border-radius: 8px;
     padding: 14px 22px;
     font-family: var(--f-display);
     font-size: 18px;
     letter-spacing: 0.02em;
     cursor: pointer;
     text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-    box-shadow: 0 8px 20px rgba(37, 142, 197, 0.2);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+    box-shadow: 0 8px 20px rgba(2, 158, 248, 0.2);
 }
 
 .pricing-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(37, 142, 197, 0.3);
+    background: #0285d4;
+    box-shadow: 0 12px 28px rgba(2, 158, 248, 0.3);
 }
 
 @media (max-width: 1024px) {
@@ -2253,24 +2254,25 @@ h1, h2, h3, h4 {
 /* — Buttons — */
 .nav-cta,
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    background: #029ef8;
     color: white;
     border: 0;
-    border-radius: var(--radius-full);
-    box-shadow: 0 10px 24px rgba(37, 142, 197, .25);
+    border-radius: 8px;
+    box-shadow: 0 10px 24px rgba(2, 158, 248, .25);
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .nav-cta:hover,
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(37, 142, 197, .4);
+    background: #0285d4;
+    box-shadow: 0 14px 30px rgba(2, 158, 248, .4);
 }
 
 .btn-ghost {
     color: #c8d6e5 !important;
     border-color: rgba(200, 214, 229, .35) !important;
-    border-radius: var(--radius-full);
+    border-radius: 8px;
 }
 
 /* — Hero — */
@@ -2347,6 +2349,23 @@ h1, h2, h3, h4 {
     transform: translateY(-7px);
     box-shadow: 0 18px 48px rgba(0, 0, 0, .35);
     border-color: rgba(89, 184, 235, .2);
+}
+
+/* #029ef8 hover for service & pricing cards */
+.service-card:hover {
+    background: #029ef8 !important;
+    border-color: #029ef8 !important;
+}
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .card-number,
+.service-card:hover .service-view-more {
+    color: #fff !important;
+}
+.service-card:hover .card-icon {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+    border-color: rgba(255,255,255,0.3) !important;
 }
 
 .service-card h3,
@@ -2459,11 +2478,31 @@ h1, h2, h3, h4 {
     background: var(--paper-2);
     border-color: var(--line);
     color: #b0c4d8;
+    transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 .pricing-card:hover {
-    box-shadow: 0 22px 50px rgba(0, 0, 0, .35);
-    border-color: rgba(89, 184, 235, .2);
+    background: #029ef8 !important;
+    border-color: #029ef8 !important;
+    box-shadow: 0 22px 50px rgba(2, 158, 248, .35);
+    color: #fff;
+}
+.pricing-card:hover .pricing-tier-tag,
+.pricing-card:hover .pricing-price,
+.pricing-card:hover .pricing-note,
+.pricing-card:hover h3 {
+    color: #fff !important;
+}
+.pricing-card:hover .pricing-features li {
+    color: rgba(255,255,255,0.9) !important;
+    border-color: rgba(255,255,255,0.2) !important;
+}
+.pricing-card:hover .pricing-features li::before {
+    color: #fff !important;
+}
+.pricing-card:hover .pricing-cta {
+    background: #fff !important;
+    color: #029ef8 !important;
 }
 
 .pricing-card.popular {
@@ -2557,22 +2596,22 @@ h1, h2, h3, h4 {
 .about, .services, .packages, .case-studies-grid, .portfolio-grid, .faq-list { color: #111827; }
 .about p, .services p, .packages p, .case-card p, .faq-answer { color: #425466; }
 
-/* Primary controls use the deep navy sampled from the logo. */
+/* Primary controls — bright #029ef8 blue. */
 .nav-cta, .btn-primary, .package-cta, .filter-tab.active, .filter-tab:hover {
-    background: linear-gradient(135deg, #171D2A 0%, #242B3A 100%);
-    border-color: #242B3A;
+    background: #029ef8;
+    border-color: #029ef8;
     color: #FFFFFF;
-    box-shadow: 0 10px 24px rgba(23, 29, 42, .24);
+    box-shadow: 0 10px 24px rgba(2, 158, 248, .24);
 }
 .nav-cta:hover, .btn-primary:hover, .package-cta:hover, .filter-tab.active:hover {
-    background: #111722;
-    border-color: #111722;
-    box-shadow: 0 14px 30px rgba(23, 29, 42, .34);
+    background: #0285d4;
+    border-color: #0285d4;
+    box-shadow: 0 14px 30px rgba(2, 158, 248, .34);
 }
 
 /* Darker blue emphasis, matching the deeper grade of the brand mark. */
-.hi { background: linear-gradient(135deg, #1D557C 0%, #2873A5 100%); color: #FFFFFF; }
-.hero h1 .hi { background: linear-gradient(135deg, #1D557C 0%, #2873A5 100%); color: #FFFFFF; transform: none; }
+.hi { background: #029ef8; color: #FFFFFF; }
+.hero h1 .hi { background: #029ef8; color: #FFFFFF; transform: none; }
 
 /* Dark-theme readability: lift headings and supporting copy without making them stark white. */
 .trust-section .trust-title,
@@ -2665,21 +2704,21 @@ h1, h2, h3, h4 {
     .client-logo-track { animation: none; overflow-x: auto; }
 }
 
-/* Reference button treatment: raised, squared controls with the existing navy color palette. */
+/* Button treatment: bright blue, rectangular, with shine sweep. */
 .nav-cta,
 .btn-primary,
 .package-cta {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, #2D3A4C 0%, #242B3A 50%, #171D2A 100%);
+    background: #029ef8;
     color: #FFFFFF;
-    border: 2.5px solid #0B1018;
-    border-radius: 9px;
-    box-shadow: 0 4px 0 #0B1018, 0 12px 22px -10px rgba(0, 0, 0, .9);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(2, 158, 248, .3);
     font-family: var(--f-display);
     letter-spacing: .03em;
     text-transform: uppercase;
-    transition: transform .08s ease, box-shadow .08s ease, filter .12s ease;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 .nav-cta::before,
 .btn-primary::before,
@@ -2697,15 +2736,15 @@ h1, h2, h3, h4 {
 .package-cta:hover::before { left: 130%; }
 .nav-cta:hover,
 .btn-primary:hover,
-.package-cta:hover { background: linear-gradient(180deg, #34455A 0%, #242B3A 55%, #171D2A 100%); transform: translateY(-1px); box-shadow: 0 5px 0 #0B1018, 0 14px 25px -10px rgba(0, 0, 0, .95); filter: none; }
+.package-cta:hover { background: #0285d4; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(2, 158, 248, .4); }
 .nav-cta:active,
 .btn-primary:active,
-.package-cta:active { transform: translateY(3px); box-shadow: 0 1px 0 #0B1018, 0 4px 10px -6px rgba(0, 0, 0, .8); }
+.package-cta:active { transform: translateY(1px); box-shadow: 0 4px 12px rgba(2, 158, 248, .25); }
 
 /* Bebas Neue has its own condensed proportions; avoid synthetic weight and compressed tracking. */
 h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 400; letter-spacing: .02em; }
 .hero h1, .page-hero h1 { letter-spacing: .01em; }
-.hero h1 .hi { background: #029ef8; border-radius: 0; }
+.hero h1 .hi { background: #029ef8; border-radius: 0; color: #fff; }
 
 /* Apply the reference display-font metrics consistently throughout the interface. */
 .section-title,
@@ -2730,9 +2769,9 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 400; letter-spacing
 }
 body, p, a, button, input, textarea, select { font-kerning: normal; text-rendering: optimizeLegibility; }
 
-/* Deep royal blue sampled from the supplied brand reference. */
-.nav-cta, .btn-primary, .package-cta { background: #164A96; }
-.nav-cta:hover, .btn-primary:hover, .package-cta:hover { background: #103C7D; }
+/* Bright blue brand CTA color. */
+.nav-cta, .btn-primary, .package-cta { background: #029ef8; }
+.nav-cta:hover, .btn-primary:hover, .package-cta:hover { background: #0285d4; }
 
 /* Mobile motion and footer layout. Touch devices can retain :hover, so never pause these rails there. */
 @media (max-width: 768px) {
@@ -3214,3 +3253,25 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     }
 }
 
+/* ============== SECTION FLOATING PARTICLES ============== */
+.section-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+.section-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(2, 158, 248, 0.18);
+    bottom: 20%;
+    animation: sectionFloat 8s ease-in-out infinite;
+}
+@keyframes sectionFloat {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 1; }
+    50% { transform: translateY(-60px) scale(1.5); opacity: 0.6; }
+    90% { opacity: 0; }
+}
