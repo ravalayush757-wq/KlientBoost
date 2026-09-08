@@ -3271,10 +3271,10 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
 #ugcGrid,
 #influencerGrid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 28px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
     width: 100% !important;
-    max-width: 1140px !important;
+    max-width: var(--container-max) !important;
     margin: 0 auto !important;
     padding-bottom: 36px !important;
     column-count: auto !important;
@@ -3308,12 +3308,19 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
 }
 
 /* --- Responsive --- */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+    #ugcGrid,
+    #influencerGrid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 18px !important;
+    }
+}
+@media (max-width: 860px) {
     #ugcGrid,
     #influencerGrid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
-        max-width: 760px !important;
+        gap: 16px !important;
+        max-width: 600px !important;
     }
 }
 @media (max-width: 768px) {
@@ -3323,12 +3330,12 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
         max-width: 560px !important;
     }
 }
-@media (max-width: 640px) {
+@media (max-width: 520px) {
     #ugcGrid,
     #influencerGrid {
         grid-template-columns: 1fr !important;
-        max-width: 380px !important;
-        gap: 18px !important;
+        max-width: 360px !important;
+        gap: 16px !important;
     }
     .portfolio-masonry { column-count: 1; column-gap: 16px; }
     .portfolio-masonry-landscape { column-count: 1; column-gap: 16px; }
