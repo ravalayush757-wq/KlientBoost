@@ -3243,15 +3243,18 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     font-feature-settings: "tnum" 1;
 }
 
-/* Social media card white text enhancements */
+/* Social media card header and white text */
 .social-metric-card .card-info {
     background: #111a24 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 16px 20px !important;
 }
 .social-metric-card .card-info h4 {
     color: #ffffff !important;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 4px;
 }
 .social-metric-card .card-info .card-tag {
     color: #ffffff !important;
@@ -3264,15 +3267,69 @@ body, p, a, button, input, textarea, select { font-kerning: normal; text-renderi
     fill: #4ade80 !important;
 }
 
-/* --- Responsive --- */
-@media (max-width: 1200px) {
-    .portfolio-masonry { column-count: 3; }
+/* --- True Centered Video & Portfolio Grids (No multi-column skew or right-shift) --- */
+#ugcGrid,
+#influencerGrid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 auto !important;
+    padding-bottom: 36px !important;
+    column-count: auto !important;
+    box-sizing: border-box !important;
 }
+
+#ugcGrid .portfolio-card,
+#influencerGrid .portfolio-card {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    break-inside: auto !important;
+}
+
+#socialGrid,
+#websitesGrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 auto !important;
+    column-count: auto !important;
+    box-sizing: border-box !important;
+}
+
+#socialGrid .portfolio-card,
+#websitesGrid .portfolio-card {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    break-inside: auto !important;
+}
+
+/* --- Responsive --- */
 @media (max-width: 1024px) {
-    .portfolio-masonry { column-count: 2; }
-    .portfolio-masonry-landscape { column-count: 2; }
+    #ugcGrid,
+    #influencerGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+        max-width: 760px !important;
+    }
+}
+@media (max-width: 768px) {
+    #socialGrid,
+    #websitesGrid {
+        grid-template-columns: 1fr !important;
+        max-width: 560px !important;
+    }
 }
 @media (max-width: 640px) {
+    #ugcGrid,
+    #influencerGrid {
+        grid-template-columns: 1fr !important;
+        max-width: 380px !important;
+        gap: 18px !important;
+    }
     .portfolio-masonry { column-count: 1; column-gap: 16px; }
     .portfolio-masonry-landscape { column-count: 1; column-gap: 16px; }
     .portfolio-card { margin-bottom: 16px; }
