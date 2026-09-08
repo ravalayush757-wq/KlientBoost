@@ -79,194 +79,576 @@
 <!-- ============== FILTER TABS ============== -->
 <section style="padding:0;background:var(--paper);">
     <div class="container">
-        <div class="filter-tabs">
-            <button class="filter-tab active" data-filter="social">Social Media</button>
-            <button class="filter-tab" data-filter="ugc">UGC & Video</button>
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab" data-filter="social">Social Media</button>
+            <button class="filter-tab active" data-filter="ugc">UGC &amp; Video</button>
             <button class="filter-tab" data-filter="influencer">Influencer</button>
             <button class="filter-tab" data-filter="websites">Websites</button>
-            <button class="filter-tab" data-filter="performance">Performance</button>
         </div>
     </div>
 </section>
 
-<!-- ============== PORTFOLIO GRID ============== -->
+<!-- ============== PORTFOLIO MASONRY ============== -->
 <section style="padding-top:0;background:var(--paper);">
     <div class="container">
-        <div class="portfolio-grid" id="portfolioGrid">
 
-            <!-- Social Media Projects -->
-            <div class="portfolio-item reveal" data-category="social">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a0a,#2a1a14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Urban Estates</h4>
-                    <div class="portfolio-meta">
-                        Social Media · Real Estate<br>
-                        Objective: Build premium brand presence<br>
-                        Result: 280% reach increase
+        <!-- Social Media -->
+        <div class="portfolio-category" data-category="social" style="display:none;">
+            <div class="portfolio-masonry portfolio-masonry-landscape" id="socialGrid">
+
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-1.jpeg" alt="Hometouch — Social Media Analytics" loading="lazy" decoding="async">
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="social">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#0f0f14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Bloom Interiors</h4>
-                    <div class="portfolio-meta">
-                        Social Media · Interior Design<br>
-                        Objective: Grow social community<br>
-                        Result: 2x consultation bookings
+                    <div class="card-info">
+                        <h4>Hometouch</h4>
+                        <span class="card-tag">Home Décor · Social Media</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="social">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#2a1a0a,#0a0a0a);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Horizon Hotels</h4>
-                    <div class="portfolio-meta">
-                        Social Media · Hospitality<br>
-                        Objective: Drive direct bookings<br>
-                        Result: 65% booking increase
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">1.5M</span><span class="metric-label">Views</span><span class="metric-growth">↑ 9.4K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">831.1K</span><span class="metric-label">Reach</span><span class="metric-growth">↑ 714%</span></div>
+                        <div class="metric-stat"><span class="metric-value">11.6K</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 100%</span></div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- UGC & Video Projects -->
-            <div class="portfolio-item reveal" data-category="ugc">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#14140a,#1a1a0a);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>FreshBite Foods</h4>
-                    <div class="portfolio-meta">
-                        UGC Video · F&B<br>
-                        Objective: Authentic product content<br>
-                        Result: 3.5x ROAS on video ads
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-2.jpeg" alt="Nandan Sweets — Social Media Analytics" loading="lazy" decoding="async">
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="ugc">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a1a,#1a0a14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>LearnSphere Academy</h4>
-                    <div class="portfolio-meta">
-                        UGC Video · Education<br>
-                        Objective: Student testimonials<br>
-                        Result: 120% enrollment increase
+                    <div class="card-info">
+                        <h4>Nandan Sweets</h4>
+                        <span class="card-tag">F&amp;B · Social Media</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Influencer Projects -->
-            <div class="portfolio-item reveal" data-category="influencer">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a140a,#0a0f14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>StyleCraft Home</h4>
-                    <div class="portfolio-meta">
-                        Influencer · Furniture<br>
-                        Objective: Product launches via creators<br>
-                        Result: 500K+ campaign impressions
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">1.2M</span><span class="metric-label">Views</span><span class="metric-growth">↑ 11.7K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">238.1K</span><span class="metric-label">Reach</span><span class="metric-growth">&nbsp;</span></div>
+                        <div class="metric-stat"><span class="metric-value">45.3K</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 2.3M%</span></div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <div class="portfolio-item reveal" data-category="influencer">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a141a,#14100a);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Bloom Interiors</h4>
-                    <div class="portfolio-meta">
-                        Influencer · Interior Design<br>
-                        Objective: Home décor creator collabs<br>
-                        Result: 12 creator partnerships
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-6.jpeg" alt="Vapour's — Social Media Analytics" loading="lazy" decoding="async">
                     </div>
-                </div>
-            </div>
-
-            <!-- Website Projects -->
-            <div class="portfolio-item reveal" data-category="websites">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a14,#14141a);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>StyleCraft Home</h4>
-                    <div class="portfolio-meta">
-                        Website · E-Commerce<br>
-                        Objective: Conversion rate optimization<br>
-                        Result: 3.2x conversion rate
+                    <div class="card-info">
+                        <h4>Vapour's</h4>
+                        <span class="card-tag">F&amp;B · Social Media</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="websites">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#141a0a,#0a0a14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Urban Estates</h4>
-                    <div class="portfolio-meta">
-                        Website · Real Estate<br>
-                        Objective: Lead capture optimization<br>
-                        Result: 45% lower CPL
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">635.4K</span><span class="metric-label">Views</span><span class="metric-growth">↑ 100%</span></div>
+                        <div class="metric-stat"><span class="metric-value">265.3K</span><span class="metric-label">Reach</span><span class="metric-growth">↑ 100%</span></div>
+                        <div class="metric-stat"><span class="metric-value">15K</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 100%</span></div>
                     </div>
-                </div>
-            </div>
+                </article>
 
-            <!-- Performance Projects -->
-            <div class="portfolio-item reveal" data-category="performance">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f0a14,#1a100a);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>Horizon Hotels</h4>
-                    <div class="portfolio-meta">
-                        Performance · Hospitality<br>
-                        Objective: Reduce OTA dependence<br>
-                        Result: 5.8x ROAS
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-5.jpeg" alt="Sugar Arts Studio — Social Media Analytics" loading="lazy" decoding="async">
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="performance">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#14100a,#0a0f14);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>FreshBite Foods</h4>
-                    <div class="portfolio-meta">
-                        Performance · F&B<br>
-                        Objective: Qualified B2B leads<br>
-                        Result: 85 leads/month
+                    <div class="card-info">
+                        <h4>Sugar Arts Studio</h4>
+                        <span class="card-tag">Bakery · Social Media</span>
                     </div>
-                </div>
-            </div>
-
-            <div class="portfolio-item reveal" data-category="performance">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a0f,#1a1414);display:flex;align-items:center;justify-content:center;">
-                    <span style="font-family:var(--f-display);font-size:48px;color:rgba(89,184,235,0.2);letter-spacing:0.05em;">KB</span>
-                </div>
-                <div class="portfolio-overlay">
-                    <h4>LearnSphere Academy</h4>
-                    <div class="portfolio-meta">
-                        Performance · Education<br>
-                        Objective: Reduce CPA<br>
-                        Result: 55% lower CPA
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">516.9K</span><span class="metric-label">Views</span><span class="metric-growth">↑ 5.3K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">103.3K</span><span class="metric-label">Reach</span><span class="metric-growth">↑ 1.9K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">12K</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 5.7K%</span></div>
                     </div>
-                </div>
-            </div>
+                </article>
 
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-4.jpeg" alt="Silkaland — Social Media Analytics" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-info">
+                        <h4>Silkaland</h4>
+                        <span class="card-tag">Fashion · Social Media</span>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">110.4K</span><span class="metric-label">Views</span><span class="metric-growth">↑ 48.5%</span></div>
+                        <div class="metric-stat"><span class="metric-value">9.6K</span><span class="metric-label">Reach</span><span class="metric-growth">↑ 25.6%</span></div>
+                        <div class="metric-stat"><span class="metric-value">1.8K</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 159%</span></div>
+                    </div>
+                </article>
+
+                <article class="portfolio-card social-metric-card reveal">
+                    <div class="metric-img-wrapper">
+                        <img src="assets/portfolio/social/social-3.jpeg" alt="Paris Garden — Social Media Analytics" loading="lazy" decoding="async">
+                    </div>
+                    <div class="card-info">
+                        <h4>Paris Garden</h4>
+                        <span class="card-tag">Lifestyle · Social Media</span>
+                    </div>
+                    <div class="metric-stats">
+                        <div class="metric-stat"><span class="metric-value">15.2K</span><span class="metric-label">Views</span><span class="metric-growth">↑ 4.8K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">2.5K</span><span class="metric-label">Reach</span><span class="metric-growth">↑ 7.4K%</span></div>
+                        <div class="metric-stat"><span class="metric-value">327</span><span class="metric-label">Interactions</span><span class="metric-growth">↑ 1.7K%</span></div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- UGC & Video -->
+        <div class="portfolio-category" data-category="ugc">
+            <div class="portfolio-masonry" id="ugcGrid">
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-1-poster.jpg" aria-label="JW Marriott Bengaluru Family Experience">
+                            <source src="assets/portfolio/ugc/ugc-1.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>JW Marriott Bengaluru</h4>
+                        <span class="card-tag">Hospitality · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-2-poster.jpg" aria-label="Zuki Pan Asian Restaurant">
+                            <source src="assets/portfolio/ugc/ugc-2.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Zuki Pan Asian</h4>
+                        <span class="card-tag">F&amp;B · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-3-poster.jpg" aria-label="Weekend Nightlife & Cocktails">
+                            <source src="assets/portfolio/ugc/ugc-3.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Nightlife &amp; Cocktails</h4>
+                        <span class="card-tag">Lifestyle · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-4-poster.jpg" aria-label="Speakeasy Bar Experience">
+                            <source src="assets/portfolio/ugc/ugc-4.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Speakeasy Bar</h4>
+                        <span class="card-tag">Hospitality · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-5-poster.jpg" aria-label="Aqua by The Park">
+                            <source src="assets/portfolio/ugc/ugc-5.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Aqua by The Park</h4>
+                        <span class="card-tag">Hospitality · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-6-poster.jpg" aria-label="Sultan Saray Cinematography">
+                            <source src="assets/portfolio/ugc/ugc-6.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Sultan Saray</h4>
+                        <span class="card-tag">F&amp;B · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-7-poster.jpg" aria-label="Moonlit Dining Experience">
+                            <source src="assets/portfolio/ugc/ugc-7.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Moonlit Dining</h4>
+                        <span class="card-tag">Hospitality · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-8-poster.jpg" aria-label="Brand Film Storytelling">
+                            <source src="assets/portfolio/ugc/ugc-8.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Brand Film</h4>
+                        <span class="card-tag">Cinematic · UGC</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/ugc/ugc-9-poster.jpg" aria-label="Sultan Saray Videography">
+                            <source src="assets/portfolio/ugc/ugc-9.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Sultan Saray</h4>
+                        <span class="card-tag">F&amp;B · UGC</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Influencer -->
+        <div class="portfolio-category" data-category="influencer" style="display:none;">
+            <div class="portfolio-masonry" id="influencerGrid">
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-1-poster.jpg" aria-label="Real Estate Content Strategy">
+                            <source src="assets/portfolio/influencer/influencer-1.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Content Strategy</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-2-poster.jpg" aria-label="DNG Noble Sky">
+                            <source src="assets/portfolio/influencer/influencer-2.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>DNG Noble Sky</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-3-poster.jpg" aria-label="Lehigh Acres Property">
+                            <source src="assets/portfolio/influencer/influencer-3.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Lehigh Acres</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-4-poster.jpg" aria-label="Lucknow Real Estate Market">
+                            <source src="assets/portfolio/influencer/influencer-4.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Lucknow Market</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-5-poster.jpg" aria-label="Sunridge Drive Property Listing">
+                            <source src="assets/portfolio/influencer/influencer-5.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Sunridge Drive</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-6-poster.jpg" aria-label="Shreeji Ellora">
+                            <source src="assets/portfolio/influencer/influencer-6.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Shreeji Ellora</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-7-poster.jpg" aria-label="Best Real Estate Agents">
+                            <source src="assets/portfolio/influencer/influencer-7.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Premium Agents</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-video-card reveal">
+                    <div class="video-wrapper">
+                        <video preload="none" muted playsinline loop poster="assets/portfolio/influencer/influencer-8-poster.jpg" aria-label="Property Showcase Reel">
+                            <source src="assets/portfolio/influencer/influencer-8.mp4" type="video/mp4">
+                        </video>
+                        <button class="video-play-btn" type="button" aria-label="Play video">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        </button>
+                        <button class="video-sound-btn" type="button" aria-label="Unmute video">
+                            <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                            <svg class="icon-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                        </button>
+                    </div>
+                    <div class="card-info">
+                        <h4>Property Showcase</h4>
+                        <span class="card-tag">Real Estate · Influencer</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Websites -->
+        <div class="portfolio-category" data-category="websites" style="display:none;">
+            <div class="portfolio-masonry portfolio-masonry-landscape" id="websitesGrid">
+
+                <!-- Update href="#" below with actual website URLs -->
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="0">
+                    <a href="https://www.earmacs.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit EARMACS website">
+                        <img src="assets/portfolio/websites/website-1.webp" alt="EARMACS — Tourism & Northeast India Travel" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>EARMACS</h4>
+                        <span class="card-tag">Tourism · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="1">
+                    <a href="https://www.bundelikothi.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Bundeli Kothi website">
+                        <img src="assets/portfolio/websites/website-2.webp" alt="Bundeli Kothi — Boutique Farmstay near Orchha" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Bundeli Kothi</h4>
+                        <span class="card-tag">Hospitality · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="2">
+                    <a href="https://sachikahotels.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Sachika Hotels website">
+                        <img src="assets/portfolio/websites/website-3.webp" alt="Sachika Hotels — Guwahati Hotel" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Sachika Hotels</h4>
+                        <span class="card-tag">Hospitality · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="3">
+                    <a href="https://www.hoteloilfield.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Hotel Oil Field website">
+                        <img src="assets/portfolio/websites/website-4.webp" alt="Hotel Oil Field — Duliajan, Assam" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Hotel Oil Field</h4>
+                        <span class="card-tag">Hospitality · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="4">
+                    <a href="https://www.lemontreehotels.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Lemon Tree Hotels website">
+                        <img src="assets/portfolio/websites/website-5.webp" alt="Lemon Tree Hotels — Hotel Chain" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Lemon Tree Hotels</h4>
+                        <span class="card-tag">Hospitality · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="5">
+                    <a href="https://www.puravankara.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Puravankara website">
+                        <img src="assets/portfolio/websites/website-6.webp" alt="Puravankara — Real Estate Developer" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Puravankara</h4>
+                        <span class="card-tag">Real Estate · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="6">
+                    <a href="https://subhamgroup.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Subham Group website">
+                        <img src="assets/portfolio/websites/website-7.webp" alt="Subham Group — Real Estate Developer" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Subham Group</h4>
+                        <span class="card-tag">Real Estate · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="7">
+                    <a href="https://www.bhumi.ngo/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Bhumi website">
+                        <img src="assets/portfolio/websites/website-8.webp" alt="Bhumi — NGO & Social Change Platform" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Bhumi</h4>
+                        <span class="card-tag">NGO · Website</span>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-photo-card reveal" data-lightbox="8">
+                    <a href="https://www.assetzproperty.com/" target="_blank" rel="noopener noreferrer" class="website-link" title="Visit Assetz website">
+                        <img src="assets/portfolio/websites/website-9.webp" alt="Assetz — Residential & Commercial Real Estate" loading="lazy" decoding="async">
+                        <div class="card-link-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </div>
+                    </a>
+                    <div class="card-info">
+                        <h4>Assetz</h4>
+                        <span class="card-tag">Real Estate · Website</span>
+                    </div>
+                </article>
+
+            </div>
         </div>
 
         <!-- CTA -->
@@ -280,6 +662,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- ============== FOOTER ============== -->
 <footer class="site-footer">
@@ -308,12 +691,13 @@
                 <a href="pricing.html#ugc-video">UGC Video Production</a>
                 <a href="pricing.html#influencer">Influencer Marketing</a>
                 <a href="pricing.html#performance">Performance Marketing</a>
-                <a href="pricing.html#telecalling">Sales & Telecalling</a>
+                <a href="pricing.html#telecalling">Sales &amp; Telecalling</a>
             </div>
             <div class="footer-col">
                 <h4>Get In Touch</h4>
                 <a href="mailto:hello@klientboost.com">hello@klientboost.com</a>
-                <a href="#" onclick="contactUs(); return false;">Start a Project</a>
+                <a href="https://wa.me/919387905882" target="_blank" rel="noopener noreferrer">WhatsApp: +91 93879 05882</a>
+                <a href="https://wa.me/919387905882" target="_blank" rel="noopener noreferrer" onclick="contactUs(); return false;">Start a Project</a>
             </div>
         </div>
         <div class="footer-bottom">
